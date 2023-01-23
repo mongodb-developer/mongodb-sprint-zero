@@ -1,3 +1,11 @@
+/**
+ * Author: <>
+ * This is for referential purposes and is not meant to be production ready code.
+ * There are no warranties associated with these functions
+ * in order to run this, execute the script and include command line arguments to perform various functions
+ * for example, run "node ms0.js insert" to create a collection and insert a sample document
+ */
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = "mongodb+srv://main_user:main_pwd_001@m10-default.5rkb2.mongodb.net?retryWrites=true&w=majority";
