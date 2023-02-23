@@ -44,6 +44,6 @@ Inserting a Thing...
 # Reviewing the Source
 Check out [Ms0Application.java](https://github.com/wbleonard/mongodb-sprint-zero/blob/SpringBoot/java-spring-boot-maven/ms0/src/main/java/com/example/ms0/Ms0Application.java)
 
-All critisism is welcome :-).
+All criticism is welcome :-).
 
 
