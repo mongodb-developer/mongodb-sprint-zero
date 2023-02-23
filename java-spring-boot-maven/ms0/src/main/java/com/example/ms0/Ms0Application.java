@@ -75,10 +75,7 @@ public class Ms0Application implements CommandLineRunner {
 			Document result = mongoOperations.executeCommand(command);
 			System.out.println(result.toJson());
 		}
-
-
 	}
-
 
 	// Print details in readable form
 	public String getThingDetails(Thing thing) {
@@ -88,5 +85,4 @@ public class Ms0Application implements CommandLineRunner {
 			", \ntime: " + thing.getTime());
 		return "";
 	}
-
 }

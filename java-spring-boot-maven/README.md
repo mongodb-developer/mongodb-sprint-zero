@@ -1,10 +1,10 @@
 # MongoDB Sprint Zero (MS0) Code Assets for Spring Boot (Maven)
 
-A template modeled after [ms0.py](../ms0.py) for Java Spring Boot. The design of this application is losely based on the [Spring Boot Integration with MongoDB Tutorial](https://www.mongodb.com/compatibility/spring-boot).
+A template modeled after [ms0.py](../ms0.py) for Java Spring Boot. The design of this application is loosely based on the [Spring Boot Integration with MongoDB Tutorial](https://www.mongodb.com/compatibility/spring-boot).
 
 ## Getting Started
 ### Set Your Connection String
-Set your connection string in the [application.properties file](./ms0/src/main/resources/application.properties).
+Set your connection string in the [application.properties](./ms0/src/main/resources/application.properties) file.
 
 ### Package The Application
 ```zsh
@@ -41,7 +41,9 @@ Inserting a Thing...
 ✗ 
 ```
 
+# Reviewing the Source
+Check out [Ms0Application.java](https://github.com/wbleonard/mongodb-sprint-zero/blob/SpringBoot/java-spring-boot-maven/ms0/src/main/java/com/example/ms0/Ms0Application.java)
 
-
+All critisism is welcome :-).
 
 
