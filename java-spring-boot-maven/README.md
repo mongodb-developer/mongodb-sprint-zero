@@ -1,8 +1,26 @@
 # MongoDB Sprint Zero (MS0) Code Assets for Spring Boot (Maven)
 
-A template modeled after [ms0.py](../ms0.py) for Java Spring Boot. The design of this application is loosely based on the [Spring Boot Integration with MongoDB Tutorial](https://www.mongodb.com/compatibility/spring-boot).
+A template modeled after [ms0.py](../ms0.py) for Java [Spring Boot](https://spring.io/) and [Spring Data](https://spring.io/projects/spring-data). The design of this application is loosely based on the [Spring Boot Integration with MongoDB Tutorial](https://www.mongodb.com/compatibility/spring-boot).
+
+[Spring Data MongoDB](https://spring.io/projects/spring-data-mongodb) is a main module of Spring Data. This application showcases two popular classes: [MongoRepository](https://docs.spring.io/spring-data/mongodb/docs/current/api/org/springframework/data/mongodb/repository/MongoRepository.html) and [MongoTemplate](https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo-template). MongoRepository provides a higher-level, type-safe API for performing basic CRUD operations on a MongoDB collection while MongoTemplate provides a low-level, more flexible way to perform MongoDB operations, such as aggreations.  
+
+Other helpful resources:
+* [Spring Data MongoDB - Reference Documentation](https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/)
+* [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/) 
+* [Introduction to Spring Data MongoDB](https://www.baeldung.com/spring-data-mongodb-tutorial)
 
 ## Getting Started
+### Requirements
+This application is dependant on Java 17. On MacOS this can be installed using Brew:
+```zsh
+brew install openjdk@17
+```
+You'll also need to update your `JAVA_HOME` and `PATH` in `.zprofile` as follows:
+```zsh
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.6
+PATH=$JAVA_HOME/bin:$PATH
+export PATH
+```
 ### Set Your Connection String
 Set your connection string in the [application.properties](./ms0/src/main/resources/application.properties) file.
 
