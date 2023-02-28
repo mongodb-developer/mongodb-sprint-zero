@@ -1,15 +1,14 @@
 # MS0
-Set of code assets for SA's to use when deliverying an MSO.
+Set of code assets to accelerat the MongoDB Sprint Zero process. 
 
 ## Demo Purposes Only
-The code contained in this repository is intended simply to help boostrap the MongoDB Spring Zero process. The code works. but is **NOT PRODUCTION READY** and is not  intended to be. 
+The code contained in this repository is intended simply to help boostrap the MongoDB Spring Zero process. The code works. but is **NOT PRODUCTION READY** and is not  intended to be.  
 
 MongoDB Sprint Zero is about helping your customers
  - Quickly start consuming credits
  - Be able to maintain momentum in their development and buying process
  - Help them have something to demonstrate the value at the end of the Sprint
 
-By creating code assets in the customer native language, we are able to accelerate past some of those bootstrap concepts and get the developers working directly with the data in a meaningful way which will increase their knowledge, likelihood of success, and stickiness factor with MongoDB. 
 
 ## How to Use
 
@@ -19,9 +18,6 @@ By creating code assets in the customer native language, we are able to accelera
    - Adding in customer business objects based on your clients needs
    - CSFLE configuration if that's critical for your customer
    - Creating new sample data records
-5. Zip up the resulting folders to be able to share with the customer
-
-***Note: The contents of this repo should not be shared directly with the customer. We want to be able to correctly share the caveats above when we present this to customers.*** 
 
 
 
