@@ -1,0 +1,27 @@
+{
+  "firstName": "$first",
+  "lastName": "$last",
+  "title": "$profession",
+  "address": {
+    "city": "$city",
+    "state": "$state",
+    "country": "$country",
+    "street": "$address"
+  },
+  "phones": {"$array": {
+    "of":  {
+      "type": {
+        "$choose": {
+          "from":  ["home","cell", "work"]
+        }
+      },
+      "number":"$phone",
+      "countryPrefix": "+1"
+    },
+    "number": 3
+    }
+
+  }
+
+
+}

@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "82a3d585-8835-4ac7-a1c7-48a1a8c68634",
+		"name": "MS0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18093979"
+	},
+	"item": [
+		{
+			"name": "Get Customer",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5077/customer/63fb944c7e699b50a57bfa85",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"customer",
+						"63fb944c7e699b50a57bfa85"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\":\"Patrick\",\n    \"lastName\":\"Mahomes\",\n    \"title\":\"All-Pro Quarterback\",\n    \"address\": {\n        \"city\":\"Kansas City\",\n        \"state\":\"MO\",\n        \"street\":\"1 Arrowhead Drive\",\n        \"country\":\"US\"\n    },\n    \"phones\": [\n        {\"type\":\"home\", \"number\":\"800-888-1234\", \"countryPrefix\":\"+1\"}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5077/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search for a Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Smith\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customer/search",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5077/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
