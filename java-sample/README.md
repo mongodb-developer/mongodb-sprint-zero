@@ -18,6 +18,12 @@ The project has the following dependencies
 * Java
 * Maven
 
+## Set Your Connection String
+Set your connection string in the [application.properties](./src/main/resources/application.properties) file.
+
+```
+spring.data.mongodb.uri=<MongoDB Connection String>
+```
 
 ## Running
 To run the project type 
@@ -29,11 +35,43 @@ You can also configure this command inside most popular IDE's as needed.
 
 ## Accessing
 
-The project will expose a REST api located @ ``` /customer ``` by which you can manipulate the customer data. The following endpoints are already existing
+The project will expose a REST api located @ ```/customer ``` by which you can manipulate the customer data. The following endpoints are already existing
 
 - ``` GET /customer/{id}``` - Pass in the HEX portion of the ObjectId to retrieve a given customer record by ID
 - ``` POST /customer ```- Create a new customer record and returns the resultig record
+
 - ``` POSt /customer/search ``` - Uses the aggregation pipeline to do an $or search against first or last name. Takes a single parameter in the request body called ``` name ```
    - This could be a great example of where you can replace the $or with a $search.  Ultimately thats why this exists with an aggregation instead of a traditional fine 
+
+## Usage Examples
+```
+curl --location 'localhost:8080/customer' \
+--header 'Content-Type: application/json' \
+--data '{
+    "firstName": "Daffy",
+    "lastName": "Duck",
+    "title": "Entertainer",
+    "address": {
+        "street": "Magic Kingdom",
+        "city": "Orlando",
+        "state": "FL",
+        "country": "USA"
+    },
+    "phones": [
+        {
+            "type": "main",
+            "number": "(407) 939-5277",
+            "countryPrefix": "1"
+        }
+    ]
+}'
+```
+
+```
+✗ curl --location --request GET 'localhost:8080/customer/6436d4fb683a624ebc12a444' \
+--header 'Content-Type: application/json'
+
+{"id":{"timestamp":1681315067,"date":"2023-04-12T15:57:47.000+00:00"},"firstName":"Daffy","lastName":"Duck","title":"Entertainer","address":{"city":"Orlando","state":"FL","country":"USA","street":"Magic Kingdom"},"phones":[{"type":"main","number":"(407) 939-5277","countryPrefix":"1"}]}
+```
 
 
