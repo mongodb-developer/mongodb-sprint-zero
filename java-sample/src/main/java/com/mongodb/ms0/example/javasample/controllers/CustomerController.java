@@ -10,16 +10,20 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value="customer", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "customer", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class CustomerController {
 
     @Autowired
     public CustomerService service;
 
-
-    @GetMapping(value="{id}")
+    @GetMapping(value = "{id}")
     public Customer getCustomerById(@PathVariable("id") String id) {
         return service.getCustomerById(id);
+    }
+
+    @GetMapping("/")
+    public List<Customer> getCustomerByLastName( @RequestParam(required = false) String lastName){
+        return service.getCustomerByLastName(lastName);
     }
 
     @PostMapping
@@ -27,11 +31,9 @@ public class CustomerController {
         return service.createCustomer(customer);
     }
 
-
-    @PostMapping(value="search")
+    @PostMapping(value = "search")
     public List<Customer> customerSearch(@RequestBody Map<String, String> values) {
         return service.customerSearch(values.get("name"));
     }
-
 
 }
