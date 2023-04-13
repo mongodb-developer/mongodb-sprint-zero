@@ -8,6 +8,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.codecs.configuration.CodecProvider;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,13 +23,12 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 @Service
 public class MongoDBConnection {
 
-    private MongoClient client;
-
+    @Value("${spring.data.mongodb.uri}")
+    private String uri;
 
     @Bean
     @Scope(value= ConfigurableBeanFactory.SCOPE_SINGLETON)
     public MongoClient mongoClient() {
-        String uri = "mongodb://localhost:27017";
         ConnectionString connectionString = new ConnectionString(uri);
         CodecRegistry pojoCodecRegistry = fromProviders(PojoCodecProvider.builder().automatic(true).build());
         CodecRegistry codecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), pojoCodecRegistry);

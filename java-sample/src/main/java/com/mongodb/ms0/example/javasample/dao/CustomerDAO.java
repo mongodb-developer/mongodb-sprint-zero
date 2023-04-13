@@ -9,7 +9,6 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.ms0.example.javasample.models.Customer;
 import org.bson.types.ObjectId;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,17 +22,20 @@ public class CustomerDAO {
 
     private MongoCollection<Customer> collection;
 
-    @Autowired
     public CustomerDAO(MongoClient client) {
         MongoDatabase database = client.getDatabase("ms0");
         this.collection = database.getCollection("customers", Customer.class);
     }
 
-
-
     public Customer getCustomerById(String id){
         System.out.print(this.collection.estimatedDocumentCount());
         return collection.find(eq("_id", new ObjectId(id))).first();
+    }
+
+    public List<Customer> getCustomerByLastName(String lastName) {
+        List<Customer> customers = new ArrayList<>();
+        collection.find(eq("lastName", lastName)).forEach(customer -> customers.add((Customer)customer));
+        return customers;
     }
 
     public Customer createCustomer(Customer customer) {
