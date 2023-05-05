@@ -1,11 +1,13 @@
 package com.example.ms0.model;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 @Document("sandbox")
 public class Thing {
 
+        @Indexed
         private int a;
         private Boolean example;
         private LocalDateTime time;

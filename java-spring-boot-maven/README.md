@@ -24,6 +24,11 @@ export PATH
 ### Set Your Connection String
 Set your connection string in the [application.properties](./ms0/src/main/resources/application.properties) file.
 
+### Configuring the Database and Collection
+The database is set in [application.properties](./ms0/src/main/resources/application.properties). By default it's set to `admin`, which is required for teh `currentOp` command to run. 
+
+The collection is set via the `@Document("sandbox")` annotation in [Thing.java](./ms0/src/main/java/com/example/ms0/model/Thing.java).
+
 ### Package The Application
 ```zsh
 ms0✗ mvn package
