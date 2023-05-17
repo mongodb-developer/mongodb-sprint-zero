@@ -24,13 +24,18 @@ export PATH
 ### Set Your Connection String
 Set your connection string in the [application.properties](./ms0/src/main/resources/application.properties) file.
 
+### Configuring the Database and Collection
+The database is set in [application.properties](./ms0/src/main/resources/application.properties). By default it's set to `admin`, which is required for teh `currentOp` command to run. 
+
+The collection is set via the `@Document("sandbox")` annotation in [Thing.java](./ms0/src/main/java/com/example/ms0/model/Thing.java).
+
 ### Package The Application
 ```zsh
-ms0✗ mvn package
+mvn package
 ```
 ## Running The Application
 ```zsh
-ms0✗ java -jar target/ms0-0.0.1-SNAPSHOT.jar <arg>
+java -jar target/ms0-0.0.1-SNAPSHOT.jar <arg>
 ```
 
 The following arguments are supported:
@@ -61,6 +66,18 @@ Inserting a Thing...
 
 # Reviewing the Source
 Check out [Ms0Application.java](https://github.com/wbleonard/mongodb-sprint-zero/blob/SpringBoot/java-spring-boot-maven/ms0/src/main/java/com/example/ms0/Ms0Application.java)
+
+## Spring Data Features
+* [Thing.java](../java-spring-boot-maven/ms0/src/main/java/com/example/ms0/model/Thing.java) demonstrates how Spring Data will automatically create indexes using the [@Indexed](https://docs.spring.io/spring-data/mongodb/docs/current/api/org/springframework/data/mongodb/core/index/Indexed.html) annotation.
+
+```java
+  @Indexed
+        private int a;
+```
+Note, the following must also be set in [application.properties](./ms0/src/main/resources/application.properties)
+```properties
+spring.data.mongodb.auto-index-creation=true
+```
 
 All criticism is welcome :-).
 
