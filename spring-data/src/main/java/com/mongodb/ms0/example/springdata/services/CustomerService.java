@@ -63,14 +63,7 @@ public class CustomerService {
 
 
 
-        /*
-        long updated =  repository.updateCustomer(customer.getFirstName(), customer.getLastName(), id);
-        if (updated > 0) {
-            return customer;
-        } else {
-            return null;
-        }
-        */
+
 
 
 

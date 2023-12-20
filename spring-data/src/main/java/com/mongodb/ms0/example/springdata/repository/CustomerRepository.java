@@ -19,12 +19,12 @@ public interface CustomerRepository extends MongoRepository<Customer, String> {
     List<Customer> customerSearch(String name);
 
 
-
     @Query("{ 'id' : ?0 }")
     Optional<Customer> findById(String id);
 
     @Query("{ 'id':  ?2 }")
     @Update("{'$set': {'firstName': ?0, 'lastName': ?1}}")
     long updateCustomer(String firstName,  String lastName,  String id);
+
 
 }

@@ -27,7 +27,6 @@ public class ChangeStreamListener implements MessageListener<ChangeStreamDocumen
 
     @Override
     public void onMessage(Message<ChangeStreamDocument<Document>, Customer> message) {
-        System.out.println(message.getBody().getFirstName());
         CustomerAudit audit = new CustomerAudit();
         if (message.getRaw().getUpdateDescription() != null) {
             for (String key : message.getRaw().getUpdateDescription().getUpdatedFields().keySet()) {
